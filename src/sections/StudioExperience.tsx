@@ -54,7 +54,7 @@ export const StudioExperience = () => {
       </div>
 
       {/* Map Container */}
-      <div className="relative w-full max-w-7xl mx-auto aspect-[16/9] px-6">
+      <div className="relative w-full max-w-7xl mx-auto aspect-video sm:aspect-[16/9] px-6">
         <div className="relative w-full h-full">
           {/* World Map SVG Background */}
           <img 
@@ -87,38 +87,42 @@ export const StudioExperience = () => {
               </div>
             </motion.div>
           ))}
+        </div>
+      </div>
 
-          {/* Floating Studio Cards */}
-          {studioCards.map((card, i) => (
-            <motion.div
-              key={card.id}
-              initial={{ opacity: 0, y: 50, scale: 0.9 }}
-              whileInView={{ opacity: 1, y: 0, scale: 1 }}
-              transition={{ delay: 0.8 + i * 0.2, duration: 1.2, ease: [0.16, 1, 0.3, 1] }}
-              viewport={{ once: true }}
-              className={`absolute ${card.position} z-30 group`}
-            >
-              <div className="relative w-48 md:w-72 aspect-[4/3] rounded-2xl overflow-hidden border border-white/10 shadow-2xl backdrop-blur-sm bg-white/5 p-1 transition-transform duration-500 group-hover:-translate-y-2 group-hover:shadow-accent/10">
-                <div className="w-full h-full relative rounded-xl overflow-hidden">
-                  <img 
-                    src={card.img} 
-                    className="w-full h-full object-cover grayscale brightness-50 group-hover:grayscale-0 group-hover:brightness-100 transition-all duration-1000"
-                    alt={card.name}
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black via-black/20 to-transparent" />
-                  
-                  {/* Card Info */}
-                  <div className="absolute bottom-4 left-4 right-4 flex justify-between items-end">
-                    <h3 className="text-xl md:text-2xl font-bebas text-white tracking-widest">{card.name}</h3>
-                    <div className="w-8 h-8 rounded-full bg-white/10 backdrop-blur-md flex items-center justify-center border border-white/10 group-hover:bg-accent group-hover:text-black transition-all">
-                      <ArrowUpRight size={14} />
+      {/* Floating Studio Cards - Grid on Mobile, Absolute on Desktop */}
+      <div className="container mx-auto px-6 mt-12 sm:mt-0 relative sm:absolute sm:inset-0 sm:pointer-events-none">
+          <div className="grid grid-cols-1 sm:block gap-8 relative h-full w-full">
+            {studioCards.map((card, i) => (
+              <motion.div
+                key={card.id}
+                initial={{ opacity: 0, y: 50, scale: 0.9 }}
+                whileInView={{ opacity: 1, y: 0, scale: 1 }}
+                transition={{ delay: 0.8 + i * 0.2, duration: 1.2, ease: [0.16, 1, 0.3, 1] }}
+                viewport={{ once: true }}
+                className={`sm:absolute ${card.position} z-30 group sm:pointer-events-auto flex justify-center`}
+              >
+                <div className="relative w-full max-w-[280px] sm:w-48 md:w-72 aspect-[4/3] rounded-2xl overflow-hidden border border-white/10 shadow-2xl backdrop-blur-sm bg-white/5 p-1 transition-transform duration-500 group-hover:-translate-y-2 group-hover:shadow-accent/10">
+                  <div className="w-full h-full relative rounded-xl overflow-hidden">
+                    <img 
+                      src={card.img} 
+                      className="w-full h-full object-cover grayscale-0 brightness-100 md:grayscale md:brightness-50 md:group-hover:grayscale-0 md:group-hover:brightness-100 transition-all duration-1000"
+                      alt={card.name}
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black via-black/20 to-transparent" />
+                    
+                    {/* Card Info */}
+                    <div className="absolute bottom-4 left-4 right-4 flex justify-between items-end">
+                      <h3 className="text-xl md:text-2xl font-bebas text-white tracking-widest">{card.name}</h3>
+                      <div className="w-8 h-8 rounded-full bg-white/10 backdrop-blur-md flex items-center justify-center border border-white/10 bg-accent text-black md:bg-white/10 md:text-white md:group-hover:bg-accent md:group-hover:text-black transition-all">
+                        <ArrowUpRight size={14} />
+                      </div>
                     </div>
                   </div>
                 </div>
-              </div>
-            </motion.div>
-          ))}
-        </div>
+              </motion.div>
+            ))}
+          </div>
       </div>
 
       {/* Decorative Text Bottom */}

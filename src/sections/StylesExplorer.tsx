@@ -54,10 +54,10 @@ export const StylesExplorer = () => {
               >
                 <img
                   src={style.img}
-                  className="w-full h-full object-cover grayscale transition-all duration-700 group-hover:grayscale-0 group-hover:scale-110"
+                  className="w-full h-full object-cover grayscale-0 md:grayscale transition-all duration-700 md:group-hover:grayscale-0 group-hover:scale-110"
                   alt={style.name}
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex flex-col justify-end p-8">
+                <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent opacity-100 md:opacity-0 md:group-hover:opacity-100 transition-opacity duration-500 flex flex-col justify-end p-8">
                   <div className="flex flex-col gap-1 mb-4">
                     <span className="text-accent text-[10px] uppercase tracking-widest font-bold">Category</span>
                     <h3 className="text-3xl font-bebas text-white tracking-wider leading-none">{style.name}</h3>

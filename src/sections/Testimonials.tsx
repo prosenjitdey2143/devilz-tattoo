@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Star, Quote, ChevronLeft, ChevronRight, ExternalLink } from 'lucide-react';
 
@@ -41,13 +41,18 @@ export const Testimonials = () => {
   const next = () => setCurrent((prev) => (prev + 1) % reviews.length);
   const prev = () => setCurrent((prev) => (prev - 1 + reviews.length) % reviews.length);
 
+  useEffect(() => {
+    const timer = setInterval(next, 5000);
+    return () => clearInterval(timer);
+  }, []);
+
   return (
     <section id="testimonials" className="pt-16 pb-32 bg-[#050505] relative overflow-hidden">
       {/* Background Ambient Glow */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[60vw] h-[60vw] bg-accent/5 rounded-full blur-[120px] pointer-events-none" />
 
       <div className="container mx-auto px-6 relative z-10">
-        <div className="flex flex-col md:flex-row justify-between items-end mb-20 gap-8">
+        <div className="flex flex-col md:flex-row justify-between items-center md:items-end mb-20 gap-8 text-center md:text-left">
           <div>
             <span className="text-accent text-xs uppercase tracking-[0.6em] font-bold">Kind Words</span>
             <h2 className="text-6xl md:text-8xl font-bebas text-white leading-none mt-4 tracking-[2px]">THE REVIEWS</h2>
@@ -81,7 +86,7 @@ export const Testimonials = () => {
 
               <div className="relative inline-block mb-12">
                 <Quote className="absolute -top-12 -left-12 w-24 h-24 text-white/5 -z-10" />
-                <p className="text-3xl md:text-5xl font-light italic text-white/90 leading-tight tracking-tight">
+                <p className="text-2xl sm:text-3xl md:text-5xl font-light italic text-white/90 leading-tight tracking-tight px-4">
                   "{reviews[current].text}"
                 </p>
               </div>
@@ -101,8 +106,8 @@ export const Testimonials = () => {
             </motion.div>
           </AnimatePresence>
 
-          {/* Navigation Controls */}
-          <div className="absolute top-1/2 -translate-y-1/2 left-0 right-0 flex justify-between pointer-events-none">
+          {/* Navigation Controls - Hidden on Mobile */}
+          <div className="absolute top-1/2 -translate-y-1/2 left-0 right-0 hidden md:flex justify-between pointer-events-none">
             <button 
               onClick={prev}
               className="w-16 h-16 rounded-full border border-white/10 flex items-center justify-center text-white/20 hover:text-white hover:border-accent transition-all pointer-events-auto backdrop-blur-sm group"

@@ -3,6 +3,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { Menu, X } from 'lucide-react';
 import { Link, useLocation } from 'react-router-dom';
 import { useBooking } from '../context/BookingContext';
+import { ASSETS } from '../assets/assets';
 
 export const Navbar = () => {
   const [scrolled, setScrolled] = useState(false);
@@ -41,12 +42,12 @@ export const Navbar = () => {
           : '-translate-y-full opacity-0 pointer-events-none py-8'
         }`}
     >
-      <div className="container mx-auto px-4 lg:px-8 flex items-center justify-between">
+      <div className="container mx-auto px-8 md:px-6 lg:px-8 flex items-center justify-between">
         <Link
           to="/"
-          className="text-2xl font-black tracking-tighter text-white flex items-center gap-2"
+          className="flex items-center gap-2"
         >
-          <span className="text-accent uppercase">Devilz</span> <span className="uppercase opacity-40">Tattooz</span>
+          <img src={ASSETS.images.logo} alt="Devilz Tattooz Logo" className="h-10 md:h-12 w-auto object-contain brightness-110" />
         </Link>
 
         {/* Desktop Nav */}
@@ -93,7 +94,7 @@ export const Navbar = () => {
             className="fixed inset-0 top-0 left-0 w-full h-screen bg-[#050505] z-[60] flex flex-col p-12"
           >
             <div className="flex justify-between items-center mb-20">
-              <span className="text-2xl font-black tracking-tighter uppercase text-white">Devilz</span>
+              <img src={ASSETS.images.logo} alt="Devilz Tattooz Logo" className="h-10 w-auto object-contain brightness-110" />
               <button onClick={() => setMobileMenuOpen(false)} className="text-white">
                 <X size={32} />
               </button>
@@ -103,7 +104,7 @@ export const Navbar = () => {
                 <Link
                   key={link.name}
                   to={link.href}
-                  className="text-5xl font-black uppercase tracking-tighter text-white/40 hover:text-white transition-colors"
+                  className="text-4xl sm:text-5xl font-black uppercase tracking-tighter text-white/40 hover:text-white transition-colors"
                   onClick={() => setMobileMenuOpen(false)}
                 >
                   {link.name}

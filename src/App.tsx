@@ -34,7 +34,7 @@ const AppContent = () => {
 
 function App() {
   return (
-    <Router basename="/devilz-tattoo">
+    <Router basename={import.meta.env.BASE_URL}>
       <BookingProvider>
         <AppContent />
       </BookingProvider>

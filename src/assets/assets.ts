@@ -29,6 +29,7 @@ import readyForMaster from './images/readyForMaster.png';
 import servicePiercing from './images/piercing.png';
 import serviceSmp from './images/smp.png';
 import serviceCosmetic from './images/cosmetic.png';
+import logo from './images/logo.png';
 
 // Artist Portraits (Generation Complete)
 import lokesh_verma from './images/lokesh_verma.png';
@@ -84,6 +85,7 @@ export const ASSETS = {
     serviceCosmetic,
     servicePiercing,
     serviceSmp,
+    logo,
   },
   videos: {
     heroBgVideo,

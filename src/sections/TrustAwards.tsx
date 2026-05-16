@@ -149,7 +149,7 @@ export const TrustAwards = () => {
         <div className="text-center mb-20 md:mb-32">
           <h2 
             ref={titleRef}
-            className="text-5xl md:text-[8vw] font-black tracking-tighter uppercase leading-none"
+            className="text-4xl sm:text-6xl md:text-[8vw] font-black tracking-tighter uppercase leading-none"
             style={{
               background: 'linear-gradient(to bottom, #E2E2E2 0%, #BF953F 50%, #B38728 100%)',
               WebkitBackgroundClip: 'text',
@@ -162,7 +162,7 @@ export const TrustAwards = () => {
         </div>
 
         {/* Awards Row */}
-        <div className="awards-row grid grid-cols-2 lg:grid-cols-5 gap-12 md:gap-8 items-start max-w-7xl mx-auto mb-32">
+        <div className="awards-row grid grid-cols-2 lg:grid-cols-5 gap-8 sm:gap-12 md:gap-8 items-start max-w-7xl mx-auto mb-32">
           {awards.map((award, i) => (
             <motion.div 
               key={i}
@@ -206,7 +206,7 @@ export const TrustAwards = () => {
           <div ref={marqueeRef} className="flex items-center gap-16 md:gap-32">
             {[...marqueeItems, ...marqueeItems, ...marqueeItems, ...marqueeItems].map((item, i) => (
               <div key={i} className="flex items-center gap-16 md:gap-32 group">
-                <h4 className="text-3xl md:text-5xl font-black tracking-tight uppercase transition-all duration-700 
+                <h4 className="text-2xl sm:text-3xl md:text-5xl font-black tracking-tight uppercase transition-all duration-700 
                                text-white/20 hover:text-white cursor-default select-none group-hover:scale-105"
                     style={{
                       fontFamily: 'Inter, sans-serif'

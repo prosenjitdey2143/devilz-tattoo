@@ -88,7 +88,7 @@ export const RecognizedBy = () => {
         >
           GLOBAL RECOGNITION
         </motion.span>
-        <h2 className="text-4xl md:text-6xl font-black tracking-tighter uppercase mb-8 leading-none">
+        <h2 className="text-3xl sm:text-5xl md:text-6xl font-black tracking-tighter uppercase mb-8 leading-none">
           CRAFTING <span className="text-transparent bg-clip-text bg-gradient-to-r from-white to-white/40">MASTERPIECES</span> SINCE 2003
         </h2>
         <p className="text-soft-white/60 text-lg md:text-xl font-light leading-relaxed">

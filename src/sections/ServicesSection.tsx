@@ -16,12 +16,12 @@ export const ServicesSection = () => {
   return (
     <section id="services" className="relative py-32 bg-[#F5F5F5] rounded-t-[5vw] overflow-hidden">
       <div className="container mx-auto px-6">
-        <div className="flex flex-col md:flex-row justify-between items-end mb-20 gap-8">
+        <div className="flex flex-col md:flex-row justify-between items-center md:items-end mb-20 gap-8 text-center md:text-left">
           <div>
             <span className="text-accent text-xs uppercase tracking-[0.4em] font-bold">What We Do</span>
-            <h2 className="text-7xl md:text-9xl font-bebas text-[#050505] leading-none mt-4">SERVICES</h2>
+            <h2 className="text-6xl md:text-9xl font-bebas text-[#050505] leading-none mt-4">SERVICES</h2>
           </div>
-          <p className="max-w-xs text-[#050505]/60 text-sm uppercase tracking-widest font-medium">
+          <p className="max-w-xs text-[#050505]/60 text-sm uppercase tracking-widest font-medium mx-auto md:mx-0">
             From conceptual art to technical excellence, we offer the full spectrum of body art.
           </p>
         </div>

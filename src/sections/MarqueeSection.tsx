@@ -4,13 +4,13 @@ import gsap from 'gsap';
 import { ASSETS } from '../assets/assets';
 
 const portfolioItems = [
-  { src: ASSETS.images.shivaTattoo, title: "Sacred Spirit", size: "w-[400px] md:w-[600px]" },
-  { src: ASSETS.images.portrait, title: "Hyper Realism", size: "w-[300px] md:w-[450px]" },
-  { src: ASSETS.images.realisticTattooV2, title: "Portraiture", size: "w-[350px] md:w-[500px]" },
-  { src: ASSETS.images.sleeveTattoo, title: "The Flow", size: "w-[450px] md:w-[700px]" },
-  { src: ASSETS.images.artistWorking1, title: "The Process", size: "w-[400px] md:w-[600px]" },
-  { src: ASSETS.images.colorTattoo, title: "Chrome", size: "w-[300px] md:w-[450px]" },
-  { src: ASSETS.images.geometricTattoo, title: "Geometry", size: "w-[400px] md:w-[550px]" },
+  { src: ASSETS.images.shivaTattoo, title: "Sacred Spirit", size: "w-[85vw] sm:w-[400px] md:w-[600px]" },
+  { src: ASSETS.images.portrait, title: "Hyper Realism", size: "w-[85vw] sm:w-[300px] md:w-[450px]" },
+  { src: ASSETS.images.realisticTattooV2, title: "Portraiture", size: "w-[85vw] sm:w-[350px] md:w-[500px]" },
+  { src: ASSETS.images.sleeveTattoo, title: "The Flow", size: "w-[85vw] sm:w-[450px] md:w-[700px]" },
+  { src: ASSETS.images.artistWorking1, title: "The Process", size: "w-[85vw] sm:w-[400px] md:w-[600px]" },
+  { src: ASSETS.images.colorTattoo, title: "Chrome", size: "w-[85vw] sm:w-[300px] md:w-[450px]" },
+  { src: ASSETS.images.geometricTattoo, title: "Geometry", size: "w-[85vw] sm:w-[400px] md:w-[550px]" },
 ];
 
 export const MarqueeSection = () => {
@@ -62,12 +62,12 @@ export const MarqueeSection = () => {
                 {/* Media Content */}
                 <img 
                   src={item.src} 
-                  className="w-full h-full object-cover grayscale brightness-50 group-hover:grayscale-0 group-hover:brightness-110 group-hover:scale-110 transition-all duration-1000" 
+                  className="w-full h-full object-cover grayscale-0 brightness-90 md:grayscale md:brightness-50 md:group-hover:grayscale-0 md:group-hover:brightness-110 group-hover:scale-110 transition-all duration-1000" 
                   alt={item.title} 
                 />
                 
                 {/* Information Overlay */}
-                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700">
+                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-100 md:opacity-0 md:group-hover:opacity-100 transition-opacity duration-700">
                   <div className="absolute bottom-10 left-10">
                     <span className="text-[10px] uppercase tracking-[2px] text-accent font-black block mb-2">
                         Masterpiece
@@ -77,7 +77,7 @@ export const MarqueeSection = () => {
                 </div>
 
                 {/* Subtle Cinematic Bars */}
-                <div className="absolute top-0 left-0 w-full h-12 bg-black/40 backdrop-blur-md opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-center px-8">
+                <div className="absolute top-0 left-0 w-full h-12 bg-black/40 backdrop-blur-md opacity-100 md:opacity-0 md:group-hover:opacity-100 transition-opacity duration-500 flex items-center px-8">
                     <span className="text-[8px] uppercase tracking-[2px] text-white/40 font-bold">DVZ.PRO.REELS</span>
                 </div>
               </motion.div>

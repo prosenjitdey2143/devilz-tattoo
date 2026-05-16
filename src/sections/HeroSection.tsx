@@ -3,6 +3,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { ChevronLeft, ChevronRight, ArrowRight } from 'lucide-react';
 import gsap from 'gsap';
 import { ASSETS } from '../assets/assets';
+import { Link } from 'react-router-dom';
 import { useBooking } from '../context/BookingContext';
 
 const slides = [
@@ -161,15 +162,10 @@ export const HeroSection = () => {
       </div>
 
       {/* Header Overlay (Editorial Style) */}
-      <header className="absolute top-0 left-0 w-full z-30 flex justify-between items-start px-8 py-10 md:px-20">
-        <motion.div
-          initial={{ opacity: 0, y: -20 }}
-          animate={{ opacity: 1, y: 0 }}
-          className="flex flex-col"
-        >
-          <span className="text-2xl font-bold tracking-[-0.05em] leading-none">TATTOO</span>
-          <span className="text-2xl font-bold tracking-[-0.05em] leading-none opacity-40">STUDIO</span>
-        </motion.div>
+      <header className="absolute top-0 left-0 w-full z-30 flex justify-between items-start px-6 py-6 md:px-20 md:py-10">
+        <Link to="/" className="flex flex-col">
+          <img src={ASSETS.images.logo} alt="Devilz Tattooz Logo" className="h-10 md:h-12 w-auto object-contain brightness-110" />
+        </Link>
 
         <motion.div
           initial={{ opacity: 0 }}
@@ -208,7 +204,7 @@ export const HeroSection = () => {
             animate={{ opacity: 1, scale: 1 }}
             exit={{ opacity: 0, scale: 1.2 }}
             transition={{ duration: 2, ease: "easeOut" as const }}
-            className="text-[30vw] font-black leading-none tracking-tighter"
+            className="text-[20vw] md:text-[30vw] font-black leading-none tracking-tighter"
             style={{
               WebkitTextStroke: '1px rgba(255,255,255,0.3)',
               color: 'transparent'
@@ -230,10 +226,10 @@ export const HeroSection = () => {
               exit={{ opacity: 0, x: 100 }}
               transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
             >
-              <h1 className="text-6xl md:text-9xl font-black leading-[0.85] tracking-[2px] uppercase mb-2">
+              <h1 className="text-5xl sm:text-7xl md:text-9xl font-black leading-[0.85] tracking-[2px] uppercase mb-2">
                 {slides[currentSlide].title}
               </h1>
-              <h1 className="text-6xl md:text-9xl font-black leading-[0.85] tracking-[2px] uppercase opacity-30">
+              <h1 className="text-5xl sm:text-7xl md:text-9xl font-black leading-[0.85] tracking-[2px] uppercase opacity-30">
                 {slides[currentSlide].subtitle}
               </h1>
             </motion.div>

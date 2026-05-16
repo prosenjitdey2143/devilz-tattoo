@@ -1,4 +1,5 @@
 import { Mail, Globe } from 'lucide-react';
+import { ASSETS } from '../assets/assets';
 
 export const Footer = () => {
   return (
@@ -6,9 +7,7 @@ export const Footer = () => {
       <div className="container mx-auto px-6">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-12 mb-20">
           <div className="col-span-1 md:col-span-2">
-            <h2 className="text-4xl font-bebas text-white mb-6">
-              <span className="text-accent">DEVILZ</span> TATTOOZ
-            </h2>
+            <img src={ASSETS.images.logo} alt="Devilz Tattooz Logo" className="h-14 w-auto object-contain brightness-110 mb-8" />
             <p className="max-w-md text-soft-white/40 text-sm leading-relaxed mb-8">
               India's premier luxury tattoo studio chain. Combining world-class artistry with the highest standards of hygiene and client care since 2003.
             </p>
