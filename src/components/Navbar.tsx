@@ -41,7 +41,7 @@ export const Navbar = () => {
           : '-translate-y-full opacity-0 pointer-events-none py-8'
         }`}
     >
-      <div className="container mx-auto px-6 flex items-center justify-between">
+      <div className="container mx-auto px-4 lg:px-8 flex items-center justify-between">
         <Link
           to="/"
           className="text-2xl font-black tracking-tighter text-white flex items-center gap-2"
@@ -50,12 +50,12 @@ export const Navbar = () => {
         </Link>
 
         {/* Desktop Nav */}
-        <div className="hidden lg:flex items-center gap-12">
+        <div className="hidden lg:flex items-center gap-5 xl:gap-8">
           {navLinks.map((link) => (
             <Link
               key={link.name}
               to={link.href}
-              className="text-[10px] uppercase tracking-[0.3em] font-black text-white/50 hover:text-accent transition-colors relative group"
+              className="text-[9px] xl:text-[10px] uppercase tracking-[0.15em] xl:tracking-[0.2em] font-black text-white/50 hover:text-accent transition-colors relative group"
             >
               {link.name}
               <span className="absolute -bottom-1 left-0 w-0 h-[1px] bg-accent transition-all duration-300 group-hover:w-full" />
@@ -68,7 +68,7 @@ export const Navbar = () => {
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
             onClick={() => openBooking()}
-            className="px-8 py-3 rounded-sm bg-accent text-white text-[10px] uppercase tracking-[0.2em] font-black hover:bg-white hover:text-black transition-all duration-500"
+            className="px-4 py-2 xl:px-8 xl:py-3 rounded-sm bg-accent text-white text-[9px] xl:text-[10px] uppercase tracking-[0.2em] font-black hover:bg-white hover:text-black transition-all duration-500"
           >
             Book Now
           </motion.button>
