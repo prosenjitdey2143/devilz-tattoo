@@ -29,7 +29,7 @@ export const MarqueeSection = () => {
       repeat: -1,
     });
 
-    return () => animation.kill();
+    return () => { animation.kill(); };
   }, []);
 
   return (

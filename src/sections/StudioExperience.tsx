@@ -1,6 +1,5 @@
-import { useRef } from 'react';
 import { motion } from 'framer-motion';
-import { MapPin, ArrowUpRight } from 'lucide-react';
+import { ArrowUpRight } from 'lucide-react';
 import { ASSETS } from '../assets/assets';
 
 const pinLocations = [
@@ -31,7 +30,6 @@ const studioCards = [
 ];
 
 export const StudioExperience = () => {
-  const containerRef = useRef<HTMLDivElement>(null);
 
   return (
     <section id="studios" className="relative min-h-screen bg-[#050505] pt-32 pb-16 overflow-hidden flex flex-col justify-center">

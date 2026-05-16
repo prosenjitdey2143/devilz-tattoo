@@ -1,11 +1,10 @@
-import { useState, useEffect } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
+import { useEffect } from 'react';
+import { motion } from 'framer-motion';
 import { ARTISTS } from '../data/artists';
 import { Navbar } from '../components/Navbar';
 import { Footer } from '../sections/Footer';
 import { Link } from 'react-router-dom';
 import { ArrowRight } from 'lucide-react';
-import { Instagram } from '../components/Icons';
 import { useBooking } from '../context/BookingContext';
 
 export const ArtistsPage = () => {
