@@ -34,7 +34,7 @@ const AppContent = () => {
 
 function App() {
   return (
-    <Router>
+    <Router basename="/devilz-tattoo">
       <BookingProvider>
         <AppContent />
       </BookingProvider>
