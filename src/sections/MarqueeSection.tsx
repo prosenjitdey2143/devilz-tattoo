@@ -4,13 +4,13 @@ import gsap from 'gsap';
 import { ASSETS } from '../assets/assets';
 
 const portfolioItems = [
-  { type: 'image', src: ASSETS.images.shivaTattoo, title: "Sacred Spirit", size: "w-[400px] md:w-[600px]" },
-  { type: 'video', src: ASSETS.videos.inkVideo, title: "Ink Motion", size: "w-[300px] md:w-[450px]" },
-  { type: 'image', src: ASSETS.images.realisticTattooV2, title: "Portraiture", size: "w-[350px] md:w-[500px]" },
-  { type: 'image', src: ASSETS.images.sleeveTattoo, title: "The Flow", size: "w-[450px] md:w-[700px]" },
-  { type: 'video', src: ASSETS.videos.processVideo, title: "The Process", size: "w-[400px] md:w-[600px]" },
-  { type: 'image', src: ASSETS.images.colorTattoo, title: "Chrome", size: "w-[300px] md:w-[450px]" },
-  { type: 'image', src: ASSETS.images.geometricTattoo, title: "Geometry", size: "w-[400px] md:w-[550px]" },
+  { src: ASSETS.images.shivaTattoo, title: "Sacred Spirit", size: "w-[400px] md:w-[600px]" },
+  { src: ASSETS.images.portrait, title: "Hyper Realism", size: "w-[300px] md:w-[450px]" },
+  { src: ASSETS.images.realisticTattooV2, title: "Portraiture", size: "w-[350px] md:w-[500px]" },
+  { src: ASSETS.images.sleeveTattoo, title: "The Flow", size: "w-[450px] md:w-[700px]" },
+  { src: ASSETS.images.artistWorking1, title: "The Process", size: "w-[400px] md:w-[600px]" },
+  { src: ASSETS.images.colorTattoo, title: "Chrome", size: "w-[300px] md:w-[450px]" },
+  { src: ASSETS.images.geometricTattoo, title: "Geometry", size: "w-[400px] md:w-[550px]" },
 ];
 
 export const MarqueeSection = () => {
@@ -60,28 +60,17 @@ export const MarqueeSection = () => {
                 whileHover={{ scale: 0.98, transition: { duration: 0.5 } }}
               >
                 {/* Media Content */}
-                {item.type === 'video' ? (
-                  <video 
-                    src={item.src} 
-                    autoPlay 
-                    loop 
-                    muted 
-                    playsInline 
-                    className="w-full h-full object-cover grayscale brightness-50 group-hover:grayscale-0 group-hover:brightness-110 transition-all duration-1000"
-                  />
-                ) : (
-                  <img 
-                    src={item.src} 
-                    className="w-full h-full object-cover grayscale brightness-50 group-hover:grayscale-0 group-hover:brightness-110 group-hover:scale-110 transition-all duration-1000" 
-                    alt={item.title} 
-                  />
-                )}
+                <img 
+                  src={item.src} 
+                  className="w-full h-full object-cover grayscale brightness-50 group-hover:grayscale-0 group-hover:brightness-110 group-hover:scale-110 transition-all duration-1000" 
+                  alt={item.title} 
+                />
                 
                 {/* Information Overlay */}
                 <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700">
                   <div className="absolute bottom-10 left-10">
                     <span className="text-[10px] uppercase tracking-[2px] text-accent font-black block mb-2">
-                        {item.type === 'video' ? 'Behind The Scenes' : 'Masterpiece'}
+                        Masterpiece
                     </span>
                     <h4 className="text-4xl font-bebas text-white tracking-[2px] uppercase">{item.title}</h4>
                   </div>
