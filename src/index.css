@@ -58,3 +58,8 @@ input[type="date"]::-webkit-calendar-picker-indicator {
     filter: invert(1);
     cursor: pointer;
 }
+
+/* Linear scrolling for infinite marquee Swipers */
+.celeb-swiper .swiper-wrapper {
+  transition-timing-function: linear !important;
+}
