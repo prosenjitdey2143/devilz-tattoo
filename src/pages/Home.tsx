@@ -1,5 +1,6 @@
 import { HeroSection } from '../sections/HeroSection';
 import { MarqueeSection } from '../sections/MarqueeSection';
+import { FeaturedVideos } from '../sections/FeaturedVideos';
 import { ServicesSection } from '../sections/ServicesSection';
 import { StylesExplorer } from '../sections/StylesExplorer';
 import { ArtistsShowcase } from '../sections/ArtistsShowcase';
@@ -16,6 +17,7 @@ export const Home = () => {
       <HeroSection />
       <RecognizedBy />
       <MarqueeSection />
+      <FeaturedVideos />
       <LegacyTrust />
       <ServicesSection />
       <StylesExplorer />

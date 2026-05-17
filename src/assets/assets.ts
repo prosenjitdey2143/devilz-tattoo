@@ -29,6 +29,7 @@ import readyForMaster from './images/readyForMaster.png';
 import servicePiercing from './images/piercing.png';
 import serviceSmp from './images/smp.png';
 import serviceCosmetic from './images/cosmetic.png';
+import serviceTraining from './images/tattoo_training.png';
 import logo from './images/logo.png';
 
 // Artist Portraits (Generation Complete)
@@ -85,6 +86,7 @@ export const ASSETS = {
     serviceCosmetic,
     servicePiercing,
     serviceSmp,
+    serviceTraining,
     logo,
   },
   videos: {

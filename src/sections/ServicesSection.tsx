@@ -8,6 +8,7 @@ const services = [
   { id: "03", title: "Cosmetic", desc: "Enhance your natural beauty with precision.", image: ASSETS.images.serviceCosmetic },
   { id: "04", title: "SMP", desc: "Scalp Micro Pigmentation for a confident look.", image: ASSETS.images.serviceSmp },
   { id: "05", title: "Piercing", desc: "Safe, professional piercing services.", image: ASSETS.images.servicePiercing },
+  { id: "06", title: "Tattoo Training", desc: "Learn the craft from the world's finest masters.", image: ASSETS.images.serviceTraining },
 ];
 
 export const ServicesSection = () => {
