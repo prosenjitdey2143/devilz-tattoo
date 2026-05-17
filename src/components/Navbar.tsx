@@ -20,6 +20,17 @@ export const Navbar = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
+  useEffect(() => {
+    if (mobileMenuOpen) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = 'auto';
+    }
+    return () => {
+      document.body.style.overflow = 'auto';
+    };
+  }, [mobileMenuOpen]);
+
   const navLinks = [
     { name: 'Home', href: '/#home' },
     { name: 'Awards', href: '/#awards' },
@@ -91,7 +102,8 @@ export const Navbar = () => {
             initial={{ opacity: 0, x: '100%' }}
             animate={{ opacity: 1, x: 0 }}
             exit={{ opacity: 0, x: '100%' }}
-            className="fixed inset-0 top-0 left-0 w-full h-screen bg-[#050505] z-[60] flex flex-col p-12"
+            className="fixed inset-0 top-0 left-0 w-full h-screen bg-[#050505] z-[60] flex flex-col p-12 overflow-y-auto"
+            data-lenis-prevent="true"
           >
             <div className="flex justify-between items-center mb-20">
               <img src={ASSETS.images.logo} alt="Devilz Tattooz Logo" className="h-10 w-auto object-contain brightness-110" />
@@ -111,7 +123,7 @@ export const Navbar = () => {
                 </Link>
               ))}
             </div>
-            <div className="mt-auto">
+            <div className="mt-8 mb-4">
               <button 
                 onClick={() => {
                   setMobileMenuOpen(false);
