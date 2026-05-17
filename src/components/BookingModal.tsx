@@ -108,11 +108,11 @@ export const BookingModal = ({ isOpen, onClose, artistName }: { isOpen: boolean,
           initial={{ scale: 0.9, y: 20, opacity: 0 }}
           animate={{ scale: 1, y: 0, opacity: 1 }}
           exit={{ scale: 0.9, y: 20, opacity: 0 }}
-          className="bg-[#0D0D0D] border border-white/10 w-full max-w-4xl rounded-2xl overflow-hidden shadow-2xl"
+          className="bg-[#0D0D0D] border border-white/10 w-full max-w-4xl rounded-2xl overflow-hidden shadow-2xl flex flex-col max-h-[90vh]"
           onClick={e => e.stopPropagation()}
         >
           {/* Header */}
-          <div className="p-8 border-b border-white/5 flex justify-between items-center">
+          <div className="p-4 md:p-8 border-b border-white/5 flex justify-between items-center shrink-0">
             <div>
               <h2 className="text-3xl font-black uppercase tracking-tighter">Reserve Your Session</h2>
               <p className="text-xs text-accent uppercase tracking-widest mt-1">
@@ -124,21 +124,21 @@ export const BookingModal = ({ isOpen, onClose, artistName }: { isOpen: boolean,
             </button>
           </div>
 
-          <div className="flex flex-col lg:flex-row h-[60vh]">
+          <div className="flex flex-col lg:flex-row flex-1 min-h-0">
             {/* Sidebar Steps */}
-            <div className="w-full lg:w-1/3 bg-[#080808] p-8 border-r border-white/5">
-                <div className="space-y-8">
+            <div className="w-full lg:w-1/3 bg-[#080808] p-4 lg:p-8 border-b lg:border-b-0 lg:border-r border-white/5 shrink-0">
+                <div className="flex flex-row justify-center gap-8 lg:justify-start lg:flex-col lg:space-y-8">
                     {steps.map((s) => (
-                        <div key={s.id} className={`flex items-center gap-4 transition-all duration-500 ${step >= s.id ? 'opacity-100' : 'opacity-20'}`}>
-                            <div className={`w-10 h-10 rounded-full flex items-center justify-center border ${step >= s.id ? 'bg-accent border-accent' : 'border-white/20'}`}>
-                                {step > s.id ? <CheckCircle2 size={18} /> : s.icon}
+                        <div key={s.id} className={`flex items-center gap-2 lg:gap-4 transition-all duration-500 ${step >= s.id ? 'opacity-100' : 'opacity-20'}`}>
+                            <div className={`w-8 h-8 lg:w-10 lg:h-10 rounded-full flex items-center justify-center border shrink-0 ${step >= s.id ? 'bg-accent border-accent' : 'border-white/20'}`}>
+                                {step > s.id ? <CheckCircle2 size={16} /> : <div className="scale-75 lg:scale-100">{s.icon}</div>}
                             </div>
-                            <span className="text-[10px] uppercase tracking-widest font-black">{s.title}</span>
+                            <span className="hidden lg:block text-[10px] uppercase tracking-widest font-black">{s.title}</span>
                         </div>
                     ))}
                 </div>
                 
-                <div className="mt-20 p-6 bg-accent/5 border border-accent/10 rounded-xl">
+                <div className="hidden lg:block mt-20 p-6 bg-accent/5 border border-accent/10 rounded-xl">
                     <p className="text-[10px] text-white/40 leading-relaxed uppercase tracking-widest">
                         A boutique booking experience for discerning clients. Expect a response within 24 hours.
                     </p>
@@ -146,7 +146,7 @@ export const BookingModal = ({ isOpen, onClose, artistName }: { isOpen: boolean,
             </div>
 
             {/* Form Content */}
-            <div className="w-full lg:w-2/3 p-8 overflow-y-auto max-h-full" data-lenis-prevent>
+            <div className="w-full lg:w-2/3 p-4 md:p-8 overflow-y-auto flex-1" data-lenis-prevent>
                 <AnimatePresence mode="wait">
                     {step === 1 && (
                         <motion.div 
@@ -333,7 +333,7 @@ export const BookingModal = ({ isOpen, onClose, artistName }: { isOpen: boolean,
           </div>
 
           {/* Footer Controls */}
-          <div className="p-8 border-t border-white/5 flex justify-between items-center bg-[#080808]">
+          <div className="p-4 md:p-8 border-t border-white/5 flex justify-between items-center bg-[#080808] shrink-0">
                 <button 
                     onClick={() => setStep(s => Math.max(1, s - 1))}
                     className={`text-[10px] uppercase tracking-[0.3em] font-black hover:text-accent transition-colors ${step === 1 ? 'opacity-0 pointer-events-none' : ''}`}
